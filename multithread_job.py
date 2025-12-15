@@ -29,7 +29,7 @@ def run_one_request(req_id: int, out_dir: str) -> dict:
         "result": result,
     }
 
-    path = os.path.join(out_dir, f"{req_id:06d}.json")
+    path = os.path.join(out_dir, f"{req_id:09d}.json")
     tmp_path = path + ".tmp"
 
     with open(tmp_path, "w", encoding="utf-8") as f:
@@ -84,3 +84,4 @@ if __name__ == "__main__":
         json.dump(summary, f, ensure_ascii=False, indent=2)
 
     print("DONE:", summary)
+
